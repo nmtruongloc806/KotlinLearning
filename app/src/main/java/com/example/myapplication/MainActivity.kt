@@ -1,8 +1,13 @@
 package com.example.myapplication
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.Button
+import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -16,6 +21,12 @@ class MainActivity : AppCompatActivity() {
         //ShowName("Loc")
         //OOPCoBan()
         //OOPDataClass()
+
+        // start up
+        //textview.text = "MTL"
+
+        ButtonView()
+
     }
 
     fun CoBan(){
@@ -55,7 +66,6 @@ class MainActivity : AppCompatActivity() {
             else -> Log.d("MTL","Cai nay la default trong c#")
         }
     }
-
     fun VongLap(){
 
         // vòng lặp while
@@ -90,7 +100,6 @@ class MainActivity : AppCompatActivity() {
             Log.d("MTL" ,"Lan thu " + i)
         }
     }
-
     fun Mang(){
         // Mảng cách 1:
 
@@ -115,12 +124,10 @@ class MainActivity : AppCompatActivity() {
         mangstring.remove("Loc")
         mangstring.removeAt(1)
     }
-
     fun ShowName(ten : String)
     {
         Log.d("MTL", "Tên của bạn là: " + ten)
     }
-
     fun OOPCoBan(){
         var sv1 : SinhVien = SinhVien("Loc","khong biet")
 
@@ -131,7 +138,6 @@ class MainActivity : AppCompatActivity() {
 
         var sv2 : SinhVien2 = SinhVien2("Loc","khong biet")
     }
-
     fun OOPDataClass(){
         var sv3 : SinhVien3 = SinhVien3("Loc","khong biet")
         sv3.hoTen = "MTL"
@@ -145,5 +151,20 @@ class MainActivity : AppCompatActivity() {
         val Ho = "Nguyen"
         val Ten = "Loc"
         Log.d("MTL" , "Sinh viên: $Ho - $Ten")
+    }
+
+    fun ButtonView() {
+        //set khi click và k trả ra view
+//        buttonview.setOnClickListener{
+//            Toast.makeText(this ,"Chao ban",Toast.LENGTH_LONG).show()
+//        }
+
+        //set khi click và trả ra view sao đó thực hiện thay đổi view đó
+        buttonview.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+                p0?.setBackgroundColor(Color.RED)
+                //TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+        })
     }
 }
